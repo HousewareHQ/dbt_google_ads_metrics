@@ -11,8 +11,8 @@ models:
 
 vars:
   # Optional configs to provide custom schemas
-  google_ads_schema: TEST_GOOGLE_ADS
-  google_ads_database: HOUSEWARE_HOUSEWARE
+  # google_ads_schema:
+  # google_ads_database:
 
   google_ads_houseware:
     ad_stats: "{{ ref('stg_google_ads__ad_stats') }}"
@@ -21,6 +21,6 @@ vars:
     ad_group_history: "{{ ref('stg_google_ads__ad_group_history') }}"
     ad_history: "{{ ref('stg_google_ads__ad_history') }}"
 
-    # Set boolean flag to read the latest info of Ads/Accounts/Campaigns/Ad Groups
+    # Set boolean `filter_latest_records` flag to read the latest info of Ads/Accounts/Campaigns/Ad Groups
     # from source tables. TRUE by default
-    # see_most_recent_record:
+    # filter_latest_records:
