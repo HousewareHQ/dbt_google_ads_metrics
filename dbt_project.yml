@@ -1,0 +1,26 @@
+config-version: 2
+
+name: 'google_ads_houseware'
+version: '1.0.0'
+
+profile: 'google_ads_houseware'
+
+models:
+  google_ads_houseware:
+      +materialized: view
+
+vars:
+  # Optional configs to provide custom schemas
+  # google_ads_schema:
+  # google_ads_database:
+
+  google_ads_houseware:
+    ad_stats: "{{ ref('stg_google_ads__ad_stats') }}"
+    account_history: "{{ ref('stg_google_ads__account_history') }}"
+    campaign_history: "{{ ref('stg_google_ads__campaign_history') }}"
+    ad_group_history: "{{ ref('stg_google_ads__ad_group_history') }}"
+    ad_history: "{{ ref('stg_google_ads__ad_history') }}"
+
+    # Set boolean `filter_latest_records` flag to read the latest info of Ads/Accounts/Campaigns/Ad Groups
+    # from source tables. TRUE by default
+    # filter_latest_records:
