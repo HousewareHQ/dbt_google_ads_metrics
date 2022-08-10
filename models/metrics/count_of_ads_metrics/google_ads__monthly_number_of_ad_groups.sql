@@ -4,8 +4,8 @@
 
 select *
 from {{ metrics.metric(
-  metric_name = 'google_ads__monthly_number_of_adgroups_by_campaign',
+  metric_name = 'google_ads__monthly_number_of_ad_groups',
   grain = 'month',
-  dimensions = ['campaign_name'],
+  dimensions = [],
   secondary_calculations = []
 ) }}

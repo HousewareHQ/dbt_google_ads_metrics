@@ -20,7 +20,7 @@ metrics:
   - name: google_ads__monthly_impressions
     label: Impressions
     model: ref('google_ads_main')
-    description: "Total impressions received in Google Ads"
+    description: "Total unique views received in Google Ads"
     type: sum
     sql: impressions
     timestamp: date_day
@@ -31,7 +31,7 @@ metrics:
   - name: google_ads__monthly_spend_micros
     label: Cost
     model: ref('google_ads_main')
-    description: "Total cost in micros received in Google Ads. 1 micro = 1 millionth unit of the base currency"
+    description: "Total cost in micros spent on Google Ads. 1 micro = 1 millionth unit of the base currency"
     type: sum
     sql: spend
     timestamp: date_day
@@ -202,8 +202,8 @@ metrics:
     filters: []
     dimensions: []
 
-  - name: google_ads__monthly_number_of_ads_by_adgroup
-    label: Number of Ads by Adgroup
+  - name: google_ads__monthly_number_of_ads_by_ad_group
+    label: Number of Ads by ad_group
     model: ref('google_ads_main')
     description: "Number of ads run per ad group"
     type: count_distinct
@@ -235,10 +235,10 @@ metrics:
     filters: []
     dimensions: [account_name]
 
-  - name: google_ads__monthly_number_of_adgroups
-    label: Number of adgroups
+  - name: google_ads__monthly_number_of_ad_groups
+    label: Number of ad_groups
     model: ref('google_ads_main')
-    description: "Number of adgroups run"
+    description: "Number of ad_groups run"
     type: count_distinct
     sql: ad_group_id
     timestamp: date_day
@@ -246,10 +246,10 @@ metrics:
     filters: []
     dimensions: []
 
-  - name: google_ads__monthly_number_of_adgroups_by_campaign
-    label: Number of adgroups
+  - name: google_ads__monthly_number_of_ad_groups_by_campaign
+    label: Number of ad_groups
     model: ref('google_ads_main')
-    description: "Number of adgroups run per campaign"
+    description: "Number of ad_groups run per campaign"
     type: count_distinct
     sql: ad_group_id
     timestamp: date_day
@@ -257,10 +257,10 @@ metrics:
     filters: []
     dimensions: [campaign_name]
 
-  - name: google_ads__monthly_number_of_adgroups_by_account
-    label: Number of adgroups by account
+  - name: google_ads__monthly_number_of_ad_groups_by_account
+    label: Number of ad_groups by account
     model: ref('google_ads_main')
-    description: "Number of adgroups run per account"
+    description: "Number of ad_groups run per account"
     type: count_distinct
     sql: ad_group_id
     timestamp: date_day
