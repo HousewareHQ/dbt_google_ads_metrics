@@ -1,6 +1,6 @@
 config-version: 2
 
-name: 'facebook_ads_metrics'
+name: 'google_ads_metrics'
 version: '1.0.0'
 
 #profile: 'de-comment and add custom profile here'
