@@ -6,7 +6,7 @@ version: '1.0.0'
 #profile: 'de-comment and add custom profile here'
 
 models:
-  google_ads_houseware:
+  google_ads_metrics:
       +materialized: view
 
 vars:
@@ -14,7 +14,7 @@ vars:
   # google_ads_schema:
   # google_ads_database:
 
-  google_ads_houseware:
+  google_ads_metrics:
     ad_stats: "{{ ref('stg_google_ads__ad_stats') }}"
     account_history: "{{ ref('stg_google_ads__account_history') }}"
     campaign_history: "{{ ref('stg_google_ads__campaign_history') }}"
