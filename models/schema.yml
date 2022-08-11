@@ -2,8 +2,8 @@ version: 2
 
 sources:
   - name: google_ads
-    schema: "{{ var('google_ads_schema', target.database) }}"
-    database: "{{ var('google_ads_database', 'fivetran_google_ads') }}"
+    schema: "{{ var('google_ads_schema', 'fivetran_google_ads') }}"
+    database: "{{ var('google_ads_database', target.database) }}"
 
     tables:
       - name: AD_STATS
