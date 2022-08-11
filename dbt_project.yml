@@ -1,9 +1,9 @@
 config-version: 2
 
-name: 'google_ads_houseware'
+name: 'facebook_ads_metrics'
 version: '1.0.0'
 
-profile: 'google_ads_houseware'
+#profile: 'de-comment and add custom profile here'
 
 models:
   google_ads_houseware:
