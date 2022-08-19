@@ -64,9 +64,9 @@
       FROM base_ad_stats
       WHERE base_ad_stats.ad_id = ad_stats.ad_id ) AS conversions,
 
-     (SELECT sum(conversion_value)
+     (SELECT sum(conversions_value)
       FROM base_ad_stats
-      WHERE base_ad_stats.ad_id = ad_stats.ad_id ) AS conversion_value,
+      WHERE base_ad_stats.ad_id = ad_stats.ad_id ) AS conversions_value,
 
      (SELECT sum(view_through_conversions)
       FROM base_ad_stats
