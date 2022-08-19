@@ -61,12 +61,12 @@ metrics:
     filters: []
     dimensions: []
 
-  - name: google_ads__monthly_conversion_value
+  - name: google_ads__monthly_conversions_value
     label: Conversion Value
     model: ref('google_ads_main')
     description: "Total amount of revenue generated"
     type: sum
-    sql: conversion_value
+    sql: conversions_value
     timestamp: date_day
     time_grains: [month]
     filters: []
