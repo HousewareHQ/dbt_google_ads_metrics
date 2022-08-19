@@ -4,7 +4,7 @@
 
 select *
 from {{ metrics.metric(
-  metric_name = 'google_ads__monthly_conversion_value',
+  metric_name = 'google_ads__monthly_conversions_value',
   grain = 'month',
   dimensions = [],
   secondary_calculations = []
