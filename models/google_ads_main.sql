@@ -96,7 +96,7 @@ SELECT *,
             ELSE NULL
         END) AS cost_per_conversion_per_ad,
        (CASE
-            WHEN spend IS NOT NULL THEN cast((conversion_value/spend) AS float)
+            WHEN spend IS NOT NULL THEN cast((conversions_value/spend) AS float)
             ELSE NULL
         END) AS roas_per_ad
 FROM SOURCE
