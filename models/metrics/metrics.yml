@@ -7,7 +7,7 @@ metrics:
 # Standard ad metrics
 
   - name: google_ads__monthly_clicks
-    label: Clicks
+    label: Google Ads Clicks
     model: ref('google_ads_main')
     description: "Total clicks received in Google Ads"
     type: sum
@@ -18,7 +18,7 @@ metrics:
     dimensions: []
 
   - name: google_ads__monthly_impressions
-    label: Impressions
+    label: Google Ads Impressions
     model: ref('google_ads_main')
     description: "Total unique views received in Google Ads"
     type: sum
@@ -29,7 +29,7 @@ metrics:
     dimensions: []
 
   - name: google_ads__monthly_spend_micros
-    label: Cost
+    label: Google Ads Cost
     model: ref('google_ads_main')
     description: "Total cost in micros spent on Google Ads. 1 micro = 1 millionth unit of the base currency"
     type: sum
@@ -40,7 +40,7 @@ metrics:
     dimensions: []
 
   - name: google_ads__monthly_view_through_conversions
-    label: View-through Conversions
+    label: Google Ads View-through Conversions
     model: ref('google_ads_main')
     description: "Number of conversions achieved from the users who have viewed an ad"
     type: sum
@@ -51,7 +51,7 @@ metrics:
     dimensions: []
 
   - name: google_ads__monthly_conversions
-    label: Conversions
+    label: Google Ads Conversions
     model: ref('google_ads_main')
     description: "Total Number of conversions achieved"
     type: sum
@@ -62,7 +62,7 @@ metrics:
     dimensions: []
 
   - name: google_ads__monthly_conversions_value
-    label: Conversion Value
+    label: Google Ads Conversion Value
     model: ref('google_ads_main')
     description: "Total amount of revenue generated"
     type: sum
@@ -76,7 +76,7 @@ metrics:
 # Ad-level ratio metrics
 
   - name: google_ads__monthly_click_through_rate_by_ad
-    label: Click-through Rate by Ad
+    label: Google Ads Click-through Rate by Ad
     model: ref('google_ads_main')
     description: "Click-through Rate per Ad"
     type: sum
@@ -87,7 +87,7 @@ metrics:
     dimensions: [ad_name]
 
   - name: google_ads__monthly_cost_per_click_by_ad
-    label: Cost per Click by Ad
+    label: Google Ads Cost per Click by Ad
     model: ref('google_ads_main')
     description: "Cost per Click per Ad"
     type: sum
@@ -98,7 +98,7 @@ metrics:
     dimensions: [ad_name]
 
   - name: google_ads__monthly_cost_per_conversion_by_ad
-    label: Cost per Conversion by Ad
+    label: Google Ads Cost per Conversion by Ad
     model: ref('google_ads_main')
     description: "Cost per Conversion per Ad"
     type: sum
@@ -109,7 +109,7 @@ metrics:
     dimensions: [ad_name]
 
   - name: google_ads__monthly_roas_by_ad
-    label: ROAS by Ad
+    label: Google Ads ROAS by Ad
     model: ref('google_ads_main')
     description: "Return on Ad Spend per Ad"
     type: sum
@@ -120,7 +120,7 @@ metrics:
     dimensions: [ad_name]
 
   - name: google_ads__monthly_cost_per_impression_by_ad
-    label: Cost per Impression by Ad
+    label: Google Ads Cost per Impression by Ad
     model: ref('google_ads_main')
     description: "Cost per Impression per Ad"
     type: sum
@@ -134,7 +134,7 @@ metrics:
 # Avg ratio metrics at campaign level
 
   - name: google_ads__monthly_avg_click_through_rate_by_campaign
-    label: Avg. Click-through Rate by Campaign
+    label: Google Ads Avg. Click-through Rate by Campaign
     model: ref('google_ads_main')
     description: "Avg. Ad Click-through Rate by Campaign"
     type: average
@@ -145,7 +145,7 @@ metrics:
     dimensions: [campaign_name]
 
   - name: google_ads__monthly_avg_cost_per_click_by_campaign
-    label: Avg. Cost per Click by Campaign
+    label: Google Ads Avg. Cost per Click by Campaign
     model: ref('google_ads_main')
     description: "Avg. Ad Cost per Click by Campaign"
     type: average
@@ -156,7 +156,7 @@ metrics:
     dimensions: [campaign_name]
 
   - name: google_ads__monthly_avg_cost_per_conversion_by_campaign
-    label: Avg. Cost per Conversion by Campaign
+    label: Google Ads Avg. Cost per Conversion by Campaign
     model: ref('google_ads_main')
     description: "Avg. Ad Cost per Conversion by Campaign"
     type: average
@@ -167,7 +167,7 @@ metrics:
     dimensions: [campaign_name]
 
   - name: google_ads__monthly_avg_roas_by_campaign
-    label: Avg. ROAS by Campaign
+    label: Google Ads Avg. ROAS by Campaign
     model: ref('google_ads_main')
     description: "Avg. Return on Ad Spend by Ad per Campaign"
     type: average
@@ -178,7 +178,7 @@ metrics:
     dimensions: [campaign_name]
 
   - name: google_ads__monthly_avg_cost_per_impression_by_campaign
-    label: Avg. Cost per Impression by Campaign
+    label: Google Ads Avg. Cost per Impression by Campaign
     model: ref('google_ads_main')
     description: "Avg. Ad Cost per Impression by Campaign"
     type: average
@@ -192,7 +192,7 @@ metrics:
 # Count of ads metrics
 
   - name: google_ads__monthly_number_of_ads
-    label: Number of Ads
+    label: Google Ads Number of Ads
     model: ref('google_ads_main')
     description: "Number of ads run"
     type: count_distinct
@@ -203,7 +203,7 @@ metrics:
     dimensions: []
 
   - name: google_ads__monthly_number_of_ads_by_ad_group
-    label: Number of Ads by ad_group
+    label: Google Ads Number of Ads by ad_group
     model: ref('google_ads_main')
     description: "Number of ads run per ad group"
     type: count_distinct
@@ -214,7 +214,7 @@ metrics:
     dimensions: [ad_group_name]
 
   - name: google_ads__monthly_number_of_ads_by_campaign
-    label: Number of Ads by Campaign
+    label: Google Ads Number of Ads by Campaign
     model: ref('google_ads_main')
     description: "Number of ads run per campaign"
     type: count_distinct
@@ -225,7 +225,7 @@ metrics:
     dimensions: [campaign_name]
 
   - name: google_ads__monthly_number_of_ads_by_account
-    label: Number of Ads by Account
+    label: Google Ads Number of Ads by Account
     model: ref('google_ads_main')
     description: "Number of ads run per account"
     type: count_distinct
@@ -236,7 +236,7 @@ metrics:
     dimensions: [account_name]
 
   - name: google_ads__monthly_number_of_ad_groups
-    label: Number of ad_groups
+    label: Google Ads Number of ad_groups
     model: ref('google_ads_main')
     description: "Number of ad_groups run"
     type: count_distinct
@@ -247,7 +247,7 @@ metrics:
     dimensions: []
 
   - name: google_ads__monthly_number_of_ad_groups_by_campaign
-    label: Number of ad_groups
+    label: Google Ads Number of ad_groups
     model: ref('google_ads_main')
     description: "Number of ad_groups run per campaign"
     type: count_distinct
@@ -258,7 +258,7 @@ metrics:
     dimensions: [campaign_name]
 
   - name: google_ads__monthly_number_of_ad_groups_by_account
-    label: Number of ad_groups by account
+    label: Google Ads Number of ad_groups by account
     model: ref('google_ads_main')
     description: "Number of ad_groups run per account"
     type: count_distinct
@@ -269,7 +269,7 @@ metrics:
     dimensions: [account_name]
 
   - name: google_ads__monthly_number_of_campaigns
-    label: Number of campaigns
+    label: Google Ads Number of campaigns
     model: ref('google_ads_main')
     description: "Number of campaigns run"
     type: count_distinct
@@ -280,7 +280,7 @@ metrics:
     dimensions: []
 
   - name: google_ads__monthly_number_of_campaigns_by_account
-    label: Number of campaigns by account
+    label: Google Ads Number of campaigns by account
     model: ref('google_ads_main')
     description: "Number of campaigns run per account"
     type: count_distinct
@@ -291,7 +291,7 @@ metrics:
     dimensions: [account_name]
 
   - name: google_ads__monthly_number_of_accounts
-    label: Number of accounts
+    label: Google Ads Number of accounts
     model: ref('google_ads_main')
     description: "Number of accounts run"
     type: count_distinct
