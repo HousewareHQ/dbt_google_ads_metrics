@@ -1,4 +1,4 @@
--- Depends on source tables from Fivetran's dbt package and the AD_STATS table from Fivetran raw data
+-- Depends on source tables from Fivetran's dbt package and the ad_stats table from Fivetran raw data
 --
  {{ config(materialized='table') }}
 
@@ -28,13 +28,13 @@
 
   ), base_ad_stats AS
   (SELECT *
-   FROM {{ source('google_ads', 'AD_STATS') }}
+   FROM {{ source('google_ads', 'ad_stats') }}
 
   ), base_ad_history AS
   (SELECT *,
           row_number() OVER (PARTITION BY id
                              ORDER BY updated_at DESC) = 1 AS is_most_recent_record
-   FROM {{ source('google_ads', 'AD_HISTORY') }}
+   FROM {{ source('google_ads', 'ad_history') }}
 
   ), recent_ad_history AS
   (SELECT *
