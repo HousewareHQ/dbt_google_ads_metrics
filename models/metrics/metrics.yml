@@ -203,7 +203,7 @@ metrics:
     dimensions: []
 
   - name: google_ads__monthly_number_of_ads_by_ad_group
-    label: Google Ads Monthly Number of Ads by ad_group
+    label: Google Ads Monthly Number of Ads by Ad Group
     model: ref('google_ads_main')
     description: "Number of ads run per ad group"
     type: count_distinct
@@ -236,7 +236,7 @@ metrics:
     dimensions: [account_name]
 
   - name: google_ads__monthly_number_of_ad_groups
-    label: Google Ads Monthly Number of ad_groups
+    label: Google Ads Monthly Number of Ad Groups
     model: ref('google_ads_main')
     description: "Number of ad_groups run"
     type: count_distinct
@@ -247,7 +247,7 @@ metrics:
     dimensions: []
 
   - name: google_ads__monthly_number_of_ad_groups_by_campaign
-    label: Google Ads Monthly Number of ad_groups
+    label: Google Ads Monthly Number of Ad Groups
     model: ref('google_ads_main')
     description: "Number of ad_groups run per campaign"
     type: count_distinct
