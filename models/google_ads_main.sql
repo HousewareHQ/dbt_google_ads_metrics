@@ -80,23 +80,23 @@
 
 SELECT *,
        (CASE
-            WHEN impressions IS NOT NULL THEN cast((spend/impressions) AS float)
+            WHEN impressions IS NOT NULL or impressions != 0 THEN cast((spend/impressions) AS float)
             ELSE NULL
         END) AS cost_per_impression_per_ad,
        (CASE
-            WHEN impressions IS NOT NULL THEN CAST ((clicks/impressions) AS float)
+            WHEN impressions IS NOT NULL or impressions != 0 THEN CAST ((clicks/impressions) AS float)
             ELSE NULL
         END) AS click_through_rate_per_ad,
        (CASE
-            WHEN clicks IS NOT NULL THEN CAST ((spend/clicks) AS float)
+            WHEN clicks IS NOT NULL or clicks != 0 THEN CAST ((spend/clicks) AS float)
             ELSE NULL
         END) AS cost_per_click_per_ad,
        (CASE
-            WHEN spend IS NOT NULL THEN cast((conversions/spend) AS float)
+            WHEN spend IS NOT NULL or spend != 0 THEN cast((conversions/spend) AS float)
             ELSE NULL
         END) AS cost_per_conversion_per_ad,
        (CASE
-            WHEN spend IS NOT NULL THEN cast((conversions_value/spend) AS float)
+            WHEN spend IS NOT NULL or spend != 0 THEN cast((conversions_value/spend) AS float)
             ELSE NULL
         END) AS roas_per_ad
 FROM SOURCE
