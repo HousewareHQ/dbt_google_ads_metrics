@@ -1,4 +1,4 @@
--- Depends on source tables from Fivetran's dbt package and the AD_STATS table from Fivetran raw data
+-- Depends on source tables from Fivetran's dbt package and the ad_stats table from Fivetran raw data
 --
  {{ config(materialized='table') }}
 
@@ -28,13 +28,13 @@
 
   ), base_ad_stats AS
   (SELECT *
-   FROM {{ source('google_ads', 'AD_STATS') }}
+   FROM {{ source('google_ads', 'ad_stats') }}
 
   ), base_ad_history AS
   (SELECT *,
           row_number() OVER (PARTITION BY id
                              ORDER BY updated_at DESC) = 1 AS is_most_recent_record
-   FROM {{ source('google_ads', 'AD_HISTORY') }}
+   FROM {{ source('google_ads', 'ad_history') }}
 
   ), recent_ad_history AS
   (SELECT *
@@ -80,23 +80,23 @@
 
 SELECT *,
        (CASE
-            WHEN impressions IS NOT NULL THEN cast((spend/impressions) AS float)
+            WHEN impressions IS NOT NULL AND impressions != 0 THEN cast((spend/impressions) AS float)
             ELSE NULL
         END) AS cost_per_impression_per_ad,
        (CASE
-            WHEN impressions IS NOT NULL THEN CAST ((clicks/impressions) AS float)
+            WHEN impressions IS NOT NULL AND impressions != 0 THEN CAST ((clicks/impressions) AS float)
             ELSE NULL
         END) AS click_through_rate_per_ad,
        (CASE
-            WHEN clicks IS NOT NULL THEN CAST ((spend/clicks) AS float)
+            WHEN clicks IS NOT NULL AND clicks != 0 THEN CAST ((spend/clicks) AS float)
             ELSE NULL
         END) AS cost_per_click_per_ad,
        (CASE
-            WHEN spend IS NOT NULL THEN cast((conversions/spend) AS float)
+            WHEN spend IS NOT NULL AND spend != 0 THEN cast((conversions/spend) AS float)
             ELSE NULL
         END) AS cost_per_conversion_per_ad,
        (CASE
-            WHEN spend IS NOT NULL THEN cast((conversions_value/spend) AS float)
+            WHEN spend IS NOT NULL AND spend != 0 THEN cast((conversions_value/spend) AS float)
             ELSE NULL
         END) AS roas_per_ad
 FROM SOURCE

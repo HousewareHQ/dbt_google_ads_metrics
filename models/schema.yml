@@ -6,8 +6,8 @@ sources:
     database: "{{ var('google_ads_database', target.database) }}"
 
     tables:
-      - name: AD_STATS
-      - name: AD_HISTORY
+      - name: ad_stats
+      - name: ad_history
 
 
 models: []
