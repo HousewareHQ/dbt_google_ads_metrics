@@ -3,8 +3,8 @@
 {{ config(materialized = 'table') }}
 
 select *
-from {{ metrics.metric(
-  metric_name = 'google_ads__monthly_number_of_ad_groups',
+from {{ metrics.calculate(
+  metric('google_ads__monthly_number_of_ad_groups'),
   grain = 'month',
   dimensions = [],
   secondary_calculations = []
