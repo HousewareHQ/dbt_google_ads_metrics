@@ -10,8 +10,8 @@ metrics:
     label: Google Ads Monthly Clicks
     model: ref('google_ads_main')
     description: "Total clicks received in Google Ads"
-    type: sum
-    sql: clicks
+    calculation_method: sum
+    expression: clicks
     timestamp: date_day
     time_grains: [month]
     filters: []
@@ -21,8 +21,8 @@ metrics:
     label: Google Ads Monthly Impressions
     model: ref('google_ads_main')
     description: "Total unique views received in Google Ads"
-    type: sum
-    sql: impressions
+    calculation_method: sum
+    expression: impressions
     timestamp: date_day
     time_grains: [month]
     filters: []
@@ -32,8 +32,8 @@ metrics:
     label: Google Ads Monthly Cost
     model: ref('google_ads_main')
     description: "Total cost in micros spent on Google Ads. 1 micro = 1 millionth unit of the base currency"
-    type: sum
-    sql: spend
+    calculation_method: sum
+    expression: spend
     timestamp: date_day
     time_grains: [month]
     filters: []
@@ -43,8 +43,8 @@ metrics:
     label: Google Ads Monthly View-through Conversions
     model: ref('google_ads_main')
     description: "Number of conversions achieved from the users who have viewed an ad"
-    type: sum
-    sql: view_through_conversions
+    calculation_method: sum
+    expression: view_through_conversions
     timestamp: date_day
     time_grains: [month]
     filters: []
@@ -54,8 +54,8 @@ metrics:
     label: Google Ads Monthly Conversions
     model: ref('google_ads_main')
     description: "Total Number of conversions achieved"
-    type: sum
-    sql: conversions
+    calculation_method: sum
+    expression: conversions
     timestamp: date_day
     time_grains: [month]
     filters: []
@@ -65,8 +65,8 @@ metrics:
     label: Google Ads Monthly Conversion Value
     model: ref('google_ads_main')
     description: "Total amount of revenue generated"
-    type: sum
-    sql: conversions_value
+    calculation_method: sum
+    expression: conversions_value
     timestamp: date_day
     time_grains: [month]
     filters: []
@@ -79,8 +79,8 @@ metrics:
     label: Google Ads Monthly Click-through Rate by Ad
     model: ref('google_ads_main')
     description: "Click-through Rate per Ad"
-    type: sum
-    sql: click_through_rate_per_ad
+    calculation_method: sum
+    expression: click_through_rate_per_ad
     timestamp: date_day
     time_grains: [month]
     filters: []
@@ -90,8 +90,8 @@ metrics:
     label: Google Ads Monthly Cost per Click by Ad
     model: ref('google_ads_main')
     description: "Cost per Click per Ad"
-    type: sum
-    sql: cost_per_click_per_ad
+    calculation_method: sum
+    expression: cost_per_click_per_ad
     timestamp: date_day
     time_grains: [month]
     filters: []
@@ -101,8 +101,8 @@ metrics:
     label: Google Ads Monthly Cost per Conversion by Ad
     model: ref('google_ads_main')
     description: "Cost per Conversion per Ad"
-    type: sum
-    sql: cost_per_conversion_per_ad
+    calculation_method: sum
+    expression: cost_per_conversion_per_ad
     timestamp: date_day
     time_grains: [month]
     filters: []
@@ -112,8 +112,8 @@ metrics:
     label: Google Ads Monthly ROAS by Ad
     model: ref('google_ads_main')
     description: "Return on Ad Spend per Ad"
-    type: sum
-    sql: roas_per_ad
+    calculation_method: sum
+    expression: roas_per_ad
     timestamp: date_day
     time_grains: [month]
     filters: []
@@ -123,8 +123,8 @@ metrics:
     label: Google Ads Monthly Cost per Impression by Ad
     model: ref('google_ads_main')
     description: "Cost per Impression per Ad"
-    type: sum
-    sql: cost_per_impression_per_ad
+    calculation_method: sum
+    expression: cost_per_impression_per_ad
     timestamp: date_day
     time_grains: [month]
     filters: []
@@ -137,8 +137,8 @@ metrics:
     label: Google Ads Monthly Avg. Click-through Rate by Campaign
     model: ref('google_ads_main')
     description: "Avg. Ad Click-through Rate by Campaign"
-    type: average
-    sql: click_through_rate_per_ad
+    calculation_method: average
+    expression: click_through_rate_per_ad
     timestamp: date_day
     time_grains: [month]
     filters: []
@@ -148,8 +148,8 @@ metrics:
     label: Google Ads Monthly Avg. Cost per Click by Campaign
     model: ref('google_ads_main')
     description: "Avg. Ad Cost per Click by Campaign"
-    type: average
-    sql: cost_per_click_per_ad
+    calculation_method: average
+    expression: cost_per_click_per_ad
     timestamp: date_day
     time_grains: [month]
     filters: []
@@ -159,8 +159,8 @@ metrics:
     label: Google Ads Monthly Avg. Cost per Conversion by Campaign
     model: ref('google_ads_main')
     description: "Avg. Ad Cost per Conversion by Campaign"
-    type: average
-    sql: cost_per_conversion_per_ad
+    calculation_method: average
+    expression: cost_per_conversion_per_ad
     timestamp: date_day
     time_grains: [month]
     filters: []
@@ -170,8 +170,8 @@ metrics:
     label: Google Ads Monthly Avg. ROAS by Campaign
     model: ref('google_ads_main')
     description: "Avg. Return on Ad Spend by Ad per Campaign"
-    type: average
-    sql: roas_per_ad
+    calculation_method: average
+    expression: roas_per_ad
     timestamp: date_day
     time_grains: [month]
     filters: []
@@ -181,8 +181,8 @@ metrics:
     label: Google Ads Monthly Avg. Cost per Impression by Campaign
     model: ref('google_ads_main')
     description: "Avg. Ad Cost per Impression by Campaign"
-    type: average
-    sql: cost_per_impression_per_ad
+    calculation_method: average
+    expression: cost_per_impression_per_ad
     timestamp: date_day
     time_grains: [month]
     filters: []
@@ -195,8 +195,8 @@ metrics:
     label: Google Ads Monthly Number of Ads
     model: ref('google_ads_main')
     description: "Number of ads run"
-    type: count_distinct
-    sql: ad_id
+    calculation_method: count_distinct
+    expression: ad_id
     timestamp: date_day
     time_grains: [month]
     filters: []
@@ -206,8 +206,8 @@ metrics:
     label: Google Ads Monthly Number of Ads by Ad Group
     model: ref('google_ads_main')
     description: "Number of ads run per ad group"
-    type: count_distinct
-    sql: ad_id
+    calculation_method: count_distinct
+    expression: ad_id
     timestamp: date_day
     time_grains: [month]
     filters: []
@@ -217,8 +217,8 @@ metrics:
     label: Google Ads Monthly Number of Ads by Campaign
     model: ref('google_ads_main')
     description: "Number of ads run per campaign"
-    type: count_distinct
-    sql: ad_id
+    calculation_method: count_distinct
+    expression: ad_id
     timestamp: date_day
     time_grains: [month]
     filters: []
@@ -228,8 +228,8 @@ metrics:
     label: Google Ads Monthly Number of Ads by Account
     model: ref('google_ads_main')
     description: "Number of ads run per account"
-    type: count_distinct
-    sql: ad_id
+    calculation_method: count_distinct
+    expression: ad_id
     timestamp: date_day
     time_grains: [month]
     filters: []
@@ -239,8 +239,8 @@ metrics:
     label: Google Ads Monthly Number of Ad Groups
     model: ref('google_ads_main')
     description: "Number of ad_groups run"
-    type: count_distinct
-    sql: ad_group_id
+    calculation_method: count_distinct
+    expression: ad_group_id
     timestamp: date_day
     time_grains: [month]
     filters: []
@@ -250,8 +250,8 @@ metrics:
     label: Google Ads Monthly Number of Ad Groups
     model: ref('google_ads_main')
     description: "Number of ad_groups run per campaign"
-    type: count_distinct
-    sql: ad_group_id
+    calculation_method: count_distinct
+    expression: ad_group_id
     timestamp: date_day
     time_grains: [month]
     filters: []
@@ -261,8 +261,8 @@ metrics:
     label: Google Ads Monthly Number of ad_groups by account
     model: ref('google_ads_main')
     description: "Number of ad_groups run per account"
-    type: count_distinct
-    sql: ad_group_id
+    calculation_method: count_distinct
+    expression: ad_group_id
     timestamp: date_day
     time_grains: [month]
     filters: []
@@ -272,8 +272,8 @@ metrics:
     label: Google Ads Monthly Number of campaigns
     model: ref('google_ads_main')
     description: "Number of campaigns run"
-    type: count_distinct
-    sql: campaign_id
+    calculation_method: count_distinct
+    expression: campaign_id
     timestamp: date_day
     time_grains: [month]
     filters: []
@@ -283,8 +283,8 @@ metrics:
     label: Google Ads Monthly Number of campaigns by account
     model: ref('google_ads_main')
     description: "Number of campaigns run per account"
-    type: count_distinct
-    sql: campaign_id
+    calculation_method: count_distinct
+    expression: campaign_id
     timestamp: date_day
     time_grains: [month]
     filters: []
@@ -294,8 +294,8 @@ metrics:
     label: Google Ads Monthly Number of accounts
     model: ref('google_ads_main')
     description: "Number of accounts run"
-    type: count_distinct
-    sql: ad_group_id
+    calculation_method: count_distinct
+    expression: ad_group_id
     timestamp: date_day
     time_grains: [month]
     filters: []
