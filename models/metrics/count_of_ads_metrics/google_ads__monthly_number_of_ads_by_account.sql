@@ -6,6 +6,6 @@ select *
 from {{ metrics.calculate(
   metric('google_ads__monthly_number_of_ads_by_account'),
   grain = 'month',
-  dimensions = ['ad_group_name'],
+  dimensions = ['account_name'],
   secondary_calculations = []
 ) }}
